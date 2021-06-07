@@ -1,18 +1,33 @@
 import React from 'react';
+import HornedBeast from './HornedBeast';
+import Data from './Data.json';
 
-class Main extends React.Component{
-    render(){
-        return(
-            <main>
-               <h2> UniWhal </h2>
-               <img src="http://3.bp.blogspot.com/_DBYF1AdFaHw/TE-f0cDQ24I/AAAAAAAACZg/l-FdTZ6M7z8/s1600/Unicorn_and_Narwhal_by_dinglehopper.jpg" alt="img1" />
+class Main extends React.Component {
+    render() {
+        return (
 
-            <p>
-            A unicorn and a narwhal nuzzling their horns",
-    "keyword": "narwhal
-            </p>
-            </main>
+            <div>
+                {Data.map((beasts) => {
+                    return (
+
+
+                        <HornedBeast
+                            title={beasts.title}
+                            imgUrl={beasts.image_url}
+                            description={beasts.description}
+
+                        />
+                    )
+                })
+
+                }
+
+            </div>
         )
     }
 }
+
+
+
+
 export default Main;
