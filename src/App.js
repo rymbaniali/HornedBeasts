@@ -4,6 +4,7 @@ import Main from './components/Main';
 import Footer from './components/Footer.js';
 import Data from './components/Data.json';
 import SelectedBeast from './components/SelectedBeast';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 class App extends React.Component {
@@ -15,7 +16,6 @@ class App extends React.Component {
       DataElement: Data,
       show: false,
       selectedImg: {}
-
 
     }
 
@@ -49,6 +49,12 @@ class App extends React.Component {
     })
   }
 
+  gitFilterdBeast = (filterdBeast) => {
+    this.setState({
+        DataElement: filterdBeast
+    })
+};
+
 
   render() {
     return (
@@ -59,6 +65,7 @@ class App extends React.Component {
           DataElement={this.state.DataElement}
           handleClose={this.handleClose}
           popUpTheCard={this.popUpTheCard}
+          gitFilterdBeast={this.gitFilterdBeast}
 
         />
 
@@ -69,7 +76,10 @@ class App extends React.Component {
           show={this.state.show}
           handleClose={this.handleClose}
           selectedImg={this.state.selectedImg}
+         
         />
+       
+         
       </div>
     )
   }
