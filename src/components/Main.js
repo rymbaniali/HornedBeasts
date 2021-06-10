@@ -9,7 +9,7 @@ class Main extends React.Component {
    
     submitForm = (event) => {
 
-        let hornsNum = event.target.value;
+        let hornsNum = Number (event.target.value);
         let DataElement = Data;
 
         let filterdBeast;
@@ -18,7 +18,7 @@ class Main extends React.Component {
             filterdBeast = DataElement.filter(item => {
 
                
-                if (item.horns == hornsNum) {
+                if (Number(item.horns) === hornsNum) {
                     return item;
                 }
             })
